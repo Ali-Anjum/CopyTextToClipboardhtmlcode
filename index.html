@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+        <p id="sample">Type in your Text...<Text class=""></Text></p>
+        <a href="#" onclick="CopyToClipboard('sample');return false;">Copy Text</a>
+    </body>
+</html>
+
+<script>
+    function CopyToClipboard(id)
+    {
+    var r = document.createRange();
+    r.selectNode(document.getElementById(id));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(r);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    }
+    </script>
